@@ -6,7 +6,7 @@ const program  = require('commander');
 const moment   = require('moment');
 const Client   = require('mongodb').MongoClient;
 const ObjectID = require('bson').ObjectID;
-const pkg = require('./package.json');
+const pkg      = require('./package.json');
 
 
 const URL  = 'mongodb://localhost:27017';
@@ -16,7 +16,7 @@ const DATE = moment().format("YYYY-MM-DD");
 
 
 program
-    .version(pkg.version)
+    .version("🥭 " + pkg.version)
     .option('-u, --url <connection> ', `mongo connection url ( defaults: ${URL} )`)
     .option('-d, --database   <name>',  'database to target')
     .option('-c, --collection <name>',  'collection to target')
@@ -51,8 +51,8 @@ client
   .then(doc => {
     const success = doc.result.ok === 1;
     const deleted = doc.result.n;
-    console.log(`Success? ${success}`);
-    console.log(`Deleted ${deleted} records from ${COL}\n`);
+    console.log(`🥭 Success? ${success}`);
+    console.log(`🥭 Deleted ${deleted} records from ${COL}\n`);
   })
   .catch(err => console.log(err))
   .finally(() => client.close());
