@@ -25,7 +25,7 @@ program
     .parse(process.argv);
 
 
-const client = new Client(URL, {useNewUrlParser: true, appName: pkg.name});
+const client = new Client(URL, {useNewUrlParser: true});
 
 client
   .connect()
