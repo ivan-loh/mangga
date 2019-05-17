@@ -47,8 +47,8 @@ client
       }
     };
 
-    console.log("database:  \t", database);
-    console.log("collection:\t", collection);
+    console.log("database:  \t", program.database   || DB);
+    console.log("collection:\t", program.collection || COL);
     console.log("start:     \t", start);
     console.log("end:       \t", end);
     console.log("filter:    \t", filter);
