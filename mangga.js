@@ -31,8 +31,8 @@ client
   .connect()
   .then(() => {
 
-    const database   = client.db(DB);
-    const collection = database.collection(COL);
+    const database   = client.db(program.database || DB);
+    const collection = database.collection(program.collection || COL);
     const start      = new Date(program.start || DATE);
     const end        = new Date(program.end   || DATE);
   
