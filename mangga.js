@@ -35,6 +35,7 @@ client
     const collection = database.collection(COL);
     const start      = new Date(program.start || DATE);
     const end        = new Date(program.end   || DATE);
+  
 
     const startTime = moment(start, "YYYY-MM-DD").startOf('day').toDate().getTime();
     const endTime   = moment(end,   "YYYY-MM-DD").endOf('day'  ).toDate().getTime();
@@ -46,6 +47,12 @@ client
       }
     };
 
+    console.log("database:  \t", DB);
+    console.log("collection:\t", COL);
+    console.log("start:     \t", start);
+    console.log("end:       \t", end);
+    console.log("filter:    \t", filter);
+    
     return collection.deleteMany(filter)
   })
   .then(doc => {
